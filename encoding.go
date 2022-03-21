@@ -5,8 +5,9 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"mime/quotedprintable"
 	"strings"
+
+	"github.com/emersion/go-message/quotedprintable"
 
 	"github.com/emersion/go-textwrapper"
 )
