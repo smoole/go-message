@@ -128,7 +128,9 @@ func (r *Reader) Read(p []byte) (n int, err error) {
 			// values >= 0x80 without complaint. Issue 22597.
 			break
 		case b < ' ' || b > '~':
-			return n, fmt.Errorf("quotedprintable: invalid unescaped byte 0x%02x in body", b)
+			// For compatibility, we don't want to return an error
+			break
+			// return n, fmt.Errorf("quotedprintable: invalid unescaped byte 0x%02x in body", b)
 		}
 		p[0] = b
 		p = p[1:]
