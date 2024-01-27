@@ -2,7 +2,7 @@
 [`quotedprintable: dont returns invalid unescaped byte 0x in body error`](https://github.com/onsole/go-message/commit/6e4cd92753102f04bc94b1cc5dbb79eac4123dff)  
 原生的 `mime/quotedprintable` 会返回这个错误，但是实际场景使用下来，是没有太大必要的，反而容易引起无法解析的问题。  
 所以将原生的 `mime/quotedprintable` 代码复制到本仓库，修改后并且改变 `encoding.go` 的对应 `import` 即可。  
-目前 `mime/quotedprintable` 对应的是 `go1.17.6`
+目前 `mime/quotedprintable` 对应的是 `go1.21.6`
 
 # go-message
 

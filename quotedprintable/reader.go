@@ -123,7 +123,7 @@ func (r *Reader) Read(p []byte) (n int, err error) {
 			r.line = r.line[2:] // 2 of the 3; other 1 is done below
 		case b == '\t' || b == '\r' || b == '\n':
 			break
-		case b >= 0x80 || b == 0x04:
+		case b >= 0x80:
 			// As an extension to RFC 2045, we accept
 			// values >= 0x80 without complaint. Issue 22597.
 			break
